@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Walking HelpDesk | Cloud Automation, AI & VoIP Consulting</title>
+  <meta name="description" content="The Walking HelpDesk helps small businesses simplify technology with cloud automation, agentic AI workflows, VoIP systems, call-center setup, CRM support, and practical IT consulting." />
+  <style>
+    :root {
+      --bg: #0f172a; 
+      --bg-soft: #111827;
+      --card: #1e293b;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at top left, #1e3a8a 0, var(--bg) 38%, #020617 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(12px);
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.2rem;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #020617;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .hero {
+      padding: 96px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent-2);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 660px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(30,41,59,0.95), rgba(15,23,42,0.95));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .checklist {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      color: var(--muted);
+    }
+
+    .checklist li::before {
+      content: "✓";
+      color: var(--accent-2);
+      font-weight: 800;
+      margin-right: 10px;
+    }
+
+    section {
+      padding: 74px 0;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .section-lead {
+      color: var(--muted);
+      max-width: 740px;
+      margin-bottom: 34px;
+      font-size: 1.05rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(30, 41, 59, 0.82);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px;
+      min-height: 230px;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .card a {
+      color: var(--accent);
+      text-decoration: underline;
+      word-break: break-word;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 780px;
+    }
+
+    .link-button {
+      display: block;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    .link-button small {
+      display: block;
+      color: var(--muted);
+      font-weight: 400;
+      margin-top: 5px;
+      word-break: break-word;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.65);
+    }
+
+    .step span {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: #020617;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, rgba(56,189,248,0.18), rgba(34,197,94,0.16));
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 42px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin: 14px auto 26px;
+      max-width: 690px;
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .cards,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 70px 0 48px;
+      }
+    }
+
+    /* Mobile-specific layout */
+    @media (max-width: 640px) {
+      body {
+        background: linear-gradient(180deg, #020617 0%, #0f172a 55%, #020617 100%);
+      }
+
+      .container {
+        width: min(430px, 92%);
+      }
+
+      header {
+        padding: 16px 0;
+      }
+
+      .nav {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .logo {
+        font-size: 1.05rem;
+      }
+
+      .nav-links,
+      header .btn {
+        display: none;
+      }
+
+      .hero {
+        padding: 42px 0 32px;
+        text-align: center;
+      }
+
+      .hero-grid {
+        gap: 24px;
+      }
+
+      .eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 0.09em;
+      }
+
+      h1 {
+        font-size: clamp(2.25rem, 13vw, 3.4rem);
+        line-height: 0.98;
+        letter-spacing: -0.06em;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 1rem;
+      }
+
+      .hero-card {
+        text-align: left;
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      section {
+        padding: 44px 0;
+      }
+
+      .section-title {
+        font-size: 2.1rem;
+        text-align: center;
+      }
+
+      .section-lead {
+        text-align: center;
+        font-size: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cards {
+        gap: 14px;
+      }
+
+      .card {
+        min-height: auto;
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .link-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .link-button {
+        text-align: center;
+        padding: 17px 18px;
+        border-radius: 999px;
+      }
+
+      .link-button small {
+        display: none;
+      }
+
+      .process {
+        gap: 12px;
+      }
+
+      .step {
+        padding: 18px;
+        border-radius: 18px;
+      }
+
+      .cta {
+        padding: 28px 20px;
+        border-radius: 24px;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">The Walking <span>HelpDesk</span></div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn" href="#contact">Book a Call</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Cloud Automation • Agentic AI • VoIP</div>
+          <h1>Fix your tech. Upgrade your systems. Simplify your life.</h1>
+          <p>
+            The Walking HelpDesk helps small businesses clean up messy technology, automate repetitive work, modernize cloud systems, and improve communication workflows without overcomplicating the solution.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">Schedule a Consultation</a>
+            <a class="btn secondary" href="#services">View Services</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>Practical technology help for growing businesses</h3>
+          <ul class="checklist">
+            <li>Cloud operations and automation support</li>
+            <li>AI workflow and agentic automation planning</li>
+            <li>VoIP, PBX, call-center, and phone system support</li>
+            <li>CRM, data cleanup, and operational process improvement</li>
+            <li>Monitoring, troubleshooting, and support escalation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Services built around real business problems.</h2>
+        <p class="section-lead">
+          You do not always need a full IT department. Sometimes you need someone who can diagnose the problem, build the fix, explain the tradeoffs, and keep the system moving.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Cloud Automation</h3>
+            <p>Automate repeatable infrastructure tasks, improve cloud workflows, document systems, and create cleaner operational processes using tools like AWS, Linux, scripting, and infrastructure-as-code.</p>
+          </article>
+
+          <article class="card">
+            <h3>Agentic AI Workflows</h3>
+            <p>Design practical AI assistants and workflow automations that help with intake, routing, scheduling, follow-ups, data organization, and internal process support.</p>
+          </article>
+
+          <article class="card">
+            <h3>VoIP & Call Centers</h3>
+            <p>Support business phone systems, PBX migrations, call routing, IVR flows, VoIP troubleshooting, contact-center setup, and communication reliability improvements.</p>
+          </article>
+
+          <article class="card">
+            <h3>CRM & Data Cleanup</h3>
+            <p>Help small teams organize customer records, clean up workflows, improve reporting, and reduce manual effort inside the systems they already use.</p>
+          </article>
+
+          <article class="card">
+            <h3>Monitoring & Troubleshooting</h3>
+            <p>Set up visibility into systems, identify recurring problems, improve alerting, and create support documentation that helps teams respond faster.</p>
+          </article>
+
+          <article class="card">
+            <h3>Fractional IT Consulting</h3>
+            <p>Get flexible technical leadership without hiring a full-time engineer. Ideal for small businesses that need guidance, implementation, and ongoing support.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <h2 class="section-title">How it works.</h2>
+        <p class="section-lead">Simple, direct, and focused on outcomes.</p>
+
+        <div class="process">
+          <div class="step">
+            <span>1</span>
+            <h3>Discover</h3>
+            <p>We review the issue, workflow, or business goal.</p>
+          </div>
+          <div class="step">
+            <span>2</span>
+            <h3>Diagnose</h3>
+            <p>We identify what is broken, slow, manual, or unclear.</p>
+          </div>
+          <div class="step">
+            <span>3</span>
+            <h3>Design</h3>
+            <p>We map the right fix, automation, or support plan.</p>
+          </div>
+          <div class="step">
+            <span>4</span>
+            <h3>Deliver</h3>
+            <p>We implement, document, and support the solution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <h2 class="section-title">Start here.</h2>
+          <p>
+            Have a system that needs fixing, automating, or simplifying? Book a consultation and let’s figure out the cleanest path forward.
+          </p>
+          <a class="btn" href="mailto:barry@thewalkinghelpdesk.com">Email The Walking HelpDesk</a>
+        </div>
+      </div>
+    </section>
+      <section id="coming-soon">
+      <div class="container">
+        <h2 class="section-title">Coming Soon</h2>
+        <p class="section-lead">Follow along as The Walking HelpDesk builds automation tools, AI workflows, and real-world tech solutions.</p>
+
+        <div class="link-grid">
+          <a class="link-button" href="#">
+            Join Discord #1
+            <small>Replace # with: https://discord.gg/CjkUARTcSg</small>
+          </a>
+
+          <a class="link-button" href="#">
+            Join Discord #2
+            <small>Replace # with: https://discord.gg/8zFWgJfWE</small>
+          </a>
+
+          <a class="link-button" href="#">
+            Watch on YouTube
+            <small>Replace # with: https://www.youtube.com/@TheWalkingHelpDesk</small>
+          </a>
+
+          <a class="link-button" href="#">
+            Follow on Instagram
+            <small>Replace # with: https://www.instagram.com/thewalkinghelpdesk/</small>
+          </a>
+
+          <a class="link-button" href="#">
+            Support on Patreon
+            <small>Replace # with: https://patreon.com/Thewalkinghelpdesk</small>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 The Walking HelpDesk LLC. Cloud Automation, AI Workflow, VoIP, and IT Consulting.
+    </div>
+  </footer>
+</body>
+</html>
