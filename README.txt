@@ -1,0 +1,1 @@
+Upload all files and folders to your GitHub Pages repo. Keep the images folder beside index.html.
