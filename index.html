@@ -7,183 +7,9 @@
 <meta name="description" content="The Walking HelpDesk provides IT consulting, VoIP systems, call center setup, CRM support, cloud automation, and future agentic AI workflows.">
 <link rel="icon" href="images/favicon.png">
 <link rel="stylesheet" href="style.css">
-
-<style>
-  img { max-width: 100%; height: auto; }
-
-  .mobile-site-toggle {
-    display: none;
-    width: 100%;
-    background: #020817;
-    border-bottom: 1px solid rgba(255,255,255,.13);
-    padding: 10px 14px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-  }
-
-  .mobile-site-toggle button {
-    border: 1px solid rgba(255,255,255,.2);
-    background: linear-gradient(180deg, #fde68a, #fbbf24);
-    color: #020817;
-    font-weight: 900;
-    border-radius: 999px;
-    padding: 10px 18px;
-    cursor: pointer;
-  }
-
-  @media (max-width: 768px) {
-    body:not(.desktop-view) .mobile-site-toggle { display: block; }
-
-    body:not(.desktop-view) .nav-wrap {
-      width: 94%;
-      margin: auto;
-      min-height: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      padding: 16px 0;
-      text-align: center;
-    }
-
-    body:not(.desktop-view) .brand {
-      justify-content: center;
-      font-size: 22px;
-      line-height: 1.1;
-    }
-
-    body:not(.desktop-view) .brand img {
-      width: 64px;
-      height: 64px;
-      object-fit: contain;
-    }
-
-    body:not(.desktop-view) .nav-links {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 14px;
-    }
-
-    body:not(.desktop-view) .nav-links a {
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.08);
-    }
-
-    body:not(.desktop-view) .nav-links a.active {
-      color: #020817;
-      background: #fbbf24;
-    }
-
-    body:not(.desktop-view) .header-contact {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-
-    body:not(.desktop-view) .hero-wrap,
-    body:not(.desktop-view) .page-hero,
-    body:not(.desktop-view) .contact-grid {
-      width: 94%;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      text-align: center;
-      padding: 42px 0;
-    }
-
-    body:not(.desktop-view) .hero-copy { padding: 0; }
-
-    body:not(.desktop-view) .hero h1,
-    body:not(.desktop-view) .page-hero h1 {
-      font-size: clamp(38px, 11vw, 52px);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-    }
-
-    body:not(.desktop-view) .hero p,
-    body:not(.desktop-view) .page-hero p {
-      font-size: 17px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    body:not(.desktop-view) .hero-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    body:not(.desktop-view) .btn {
-      width: 100%;
-      min-height: 54px;
-    }
-
-    body:not(.desktop-view) .hero-image,
-    body:not(.desktop-view) .page-hero img {
-      width: 100%;
-      height: auto;
-      border-radius: 22px;
-      object-fit: cover;
-    }
-
-    body:not(.desktop-view) .section {
-      width: 94%;
-      padding: 48px 0;
-    }
-
-    body:not(.desktop-view) .section h2 {
-      font-size: clamp(32px, 9vw, 44px);
-    }
-
-    body:not(.desktop-view) .service-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-
-    body:not(.desktop-view) .service-card { text-align: left; }
-
-    body:not(.desktop-view) input,
-    body:not(.desktop-view) textarea {
-      width: 100%;
-      font-size: 16px;
-    }
-
-    body:not(.desktop-view) footer {
-      padding: 26px 14px;
-      font-size: 14px;
-    }
-  }
-
-  body.desktop-view {
-    min-width: 1200px;
-  }
-
-  body.desktop-view .mobile-site-toggle {
-    display: block;
-  }
-
-  body.desktop-view .mobile-site-toggle button {
-    background: transparent;
-    color: #fbbf24;
-  }
-</style>
-
 </head>
 
 <body>
-
-<div class="mobile-site-toggle">
-  <button id="siteViewToggle" type="button">View Full Site</button>
-</div>
-
     <!-- =========================================================
          SITE HEADER / NAVIGATION
          Uses anchor links because this is now one page.
@@ -191,14 +17,14 @@
 <header class="site-header">
 <div class="nav-wrap">
 <a class="brand" href="#home">
-<img src="images/favicon.png" alt="The Walking HelpDesk logo">
+<img src="images/logo.png" alt="The Walking HelpDesk logo">
 <span>The Walking HelpDesk</span>
 </a>
 <nav class="nav-links">
 <a class="active" href="#home">Home</a>
 <a class="" href="#about">About</a>
 <a class="" href="#services">Services</a>
-<a class="" href="#providers">Provider</a>
+<a class="" href="#provider">Provider</a>
 <a class="" href="#contact">Contact</a>
 </nav>
 <div class="header-contact"> 
@@ -235,7 +61,6 @@
 </div>
 </section>
     <!-- ==================== END HOME SECTION ==================== -->
-
 
 <!-- =========================================================
      ABOUT SECTION
@@ -376,49 +201,80 @@
 
         <div class="contact-grid">
 
-            <!-- =========================
-                 EMAIL US SECTION - LEFT SIDE
-            ========================== -->
-            <article class="service-card contact-email-card">
-                <h3>Email Us</h3>
-                <p>
-                    Fill out the form below and we’ll respond as soon as possible.
-                </p>
+<!-- =========================
+     EMAIL US SECTION - LEFT SIDE
+========================== -->
+<article class="service-card contact-email-card">
+    <h3>Email Us</h3>
+    <p>
+        Fill out the form below and we’ll respond as soon as possible.
+    </p>
 
-                <form class="contact-form" action="/api/contact" method="POST">
+    <form 
+        class="contact-form" 
+        id="contactForm" 
+        action="https://formspree.io/f/xaqzwely" 
+        method="POST"
+    >
 
-                    <input 
-                        type="text" 
-                        name="name" 
-                        placeholder="Your Name *" 
-                        required
-                    >
+        <input 
+            type="text" 
+            name="name" 
+            placeholder="Your Name *" 
+            required
+        >
 
-                    <input 
-                        type="email" 
-                        name="email" 
-                        placeholder="Your Email *" 
-                        required
-                    >
+        <input 
+            type="email" 
+            name="email" 
+            placeholder="Your Email *" 
+            required
+        >
 
-                    <input 
-                        type="text" 
-                        name="company" 
-                        placeholder="Company Name"
-                    >
+        <input 
+            type="text" 
+            name="company" 
+            placeholder="Company Name"
+        >
 
-                    <textarea 
-                        name="message" 
-                        placeholder="How can we help you? *" 
-                        required
-                    ></textarea>
+        <textarea 
+            name="message" 
+            placeholder="How can we help you? *" 
+            required
+        ></textarea>
 
-                    <button class="btn primary" type="submit">
-                        Send Message
-                    </button>
+        <input 
+            type="hidden" 
+            name="_subject" 
+            value="New Website Inquiry - The Walking HelpDesk"
+        >
 
-                </form>
-            </article>
+        <button class="btn primary" type="submit" id="submitBtn">
+            Send Message
+        </button>
+
+    </form>
+
+    <!-- THANK YOU OVERLAY - HIDDEN UNTIL MESSAGE SENDS -->
+    <div id="thankYouOverlay" class="thank-you-overlay">
+        <div class="thank-you-box">
+            <button 
+                class="thank-you-close" 
+                type="button" 
+                onclick="closeThankYou()" 
+                aria-label="Close thank you message"
+            >
+                ×
+            </button>
+
+            <h2>Message Sent!</h2>
+            <p>
+                Thank you for contacting The Walking HelpDesk. 
+                We’ll respond as soon as possible.
+            </p>
+        </div>
+    </div>
+</article>
 
             <!-- =========================
                  CALL US SECTION - RIGHT SIDE
@@ -441,62 +297,242 @@
 </section>
     </main>
 
-    <!-- =========================================================
-         SITE FOOTER
-         ========================================================= -->
-<footer>© 2026 The Walking HelpDesk LLC. Cloud Automation, AI Workflow, VoIP, and IT Consulting.</footer>
+<!-- =========================================================
+     SITE FOOTER
+========================================================= -->
+<footer>
+    © 2026 The Walking HelpDesk LLC. Cloud Automation, AI Workflow, VoIP, and IT Consulting.
+</footer>
 
-
-    <!-- =========================================================
-         ONE-PAGE NAVIGATION HIGHLIGHT SCRIPT
-         Highlights Home, About, Services, Provider, Contact, or More
-         based on the section currently in view.
-         ========================================================= -->
-    <script>
-      const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
-      const pageSections = Array.from(document.querySelectorAll('.combined-page-section[id]'));
-
-      function setActiveNav(sectionId) {
-        navLinks.forEach((link) => {
-          link.classList.toggle('active', link.getAttribute('href') === '#' + sectionId);
-        });
-      }
-
-      const observer = new IntersectionObserver((entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visible) {
-          setActiveNav(visible.target.id);
-        }
-      }, {
-        threshold: [0.25, 0.4, 0.6],
-        rootMargin: '-20% 0px -55% 0px'
-      });
-
-      pageSections.forEach((section) => observer.observe(section));
-    </script>
-    <!-- ==================== END ONE-PAGE NAVIGATION HIGHLIGHT SCRIPT ==================== -->
-
-
+<!-- =========================================================
+     SITE SCRIPTS
+     Handles:
+     1. One-page navigation active state
+     2. Formspree contact form submission
+     3. Thank-you overlay close/reset
+========================================================= -->
 <script>
-  const siteViewToggle = document.getElementById('siteViewToggle');
-  const savedViewMode = localStorage.getItem('twhdViewMode');
+document.addEventListener('DOMContentLoaded', function () {
 
-  if (savedViewMode === 'desktop') {
-    document.body.classList.add('desktop-view');
-    if (siteViewToggle) siteViewToggle.textContent = 'View Mobile Site';
-  }
+    /* =========================================================
+       ONE-PAGE NAVIGATION HIGHLIGHT
+    ========================================================= */
 
-  if (siteViewToggle) {
-    siteViewToggle.addEventListener('click', () => {
-      const isDesktop = document.body.classList.toggle('desktop-view');
-      localStorage.setItem('twhdViewMode', isDesktop ? 'desktop' : 'mobile');
-      siteViewToggle.textContent = isDesktop ? 'View Mobile Site' : 'View Full Site';
-    });
-  }
+    const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+    const pageSections = Array.from(document.querySelectorAll('.combined-page-section[id]'));
+
+    function setActiveNav(sectionId) {
+        navLinks.forEach(function (link) {
+            const linkTarget = link.getAttribute('href');
+            link.classList.toggle('active', linkTarget === '#' + sectionId);
+        });
+    }
+
+    if (navLinks.length && pageSections.length) {
+        const observer = new IntersectionObserver(function (entries) {
+            const visibleSection = entries
+                .filter(function (entry) {
+                    return entry.isIntersecting;
+                })
+                .sort(function (a, b) {
+                    return b.intersectionRatio - a.intersectionRatio;
+                })[0];
+
+            if (visibleSection) {
+                setActiveNav(visibleSection.target.id);
+            }
+        }, {
+            threshold: [0.25, 0.4, 0.6],
+            rootMargin: '-20% 0px -55% 0px'
+        });
+
+        pageSections.forEach(function (section) {
+            observer.observe(section);
+        });
+
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                const targetId = link.getAttribute('href').replace('#', '');
+                setActiveNav(targetId);
+            });
+        });
+    }
+
+
+    /* =========================================================
+       FORMSPREE CONTACT FORM + THANK YOU OVERLAY
+    ========================================================= */
+
+    const contactForm = document.getElementById('contactForm');
+    const thankYouOverlay = document.getElementById('thankYouOverlay');
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (contactForm && thankYouOverlay && submitBtn) {
+        contactForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    contactForm.reset();
+                    thankYouOverlay.classList.add('show');
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                alert('There was a connection problem. Please try again.');
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        });
+    }
+
+});
+
+
+/* =========================================================
+   CLOSE THANK YOU OVERLAY
+   Kept global so onclick="closeThankYou()" works
+========================================================= */
+
+function closeThankYou() {
+    const contactForm = document.getElementById('contactForm');
+    const thankYouOverlay = document.getElementById('thankYouOverlay');
+
+    if (thankYouOverlay) {
+        thankYouOverlay.classList.remove('show');
+    }
+
+    if (contactForm) {
+        contactForm.reset();
+    }
+}
 </script>
+ 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
 
+    /* =========================================================
+       ONE-PAGE NAVIGATION HIGHLIGHT
+    ========================================================= */
+
+    const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+    const pageSections = Array.from(document.querySelectorAll('.combined-page-section[id]'));
+
+    function setActiveNav(sectionId) {
+        navLinks.forEach(function (link) {
+            const linkTarget = link.getAttribute('href');
+            link.classList.toggle('active', linkTarget === '#' + sectionId);
+        });
+    }
+
+    if (navLinks.length && pageSections.length) {
+        const observer = new IntersectionObserver(function (entries) {
+            const visibleSection = entries
+                .filter(function (entry) {
+                    return entry.isIntersecting;
+                })
+                .sort(function (a, b) {
+                    return b.intersectionRatio - a.intersectionRatio;
+                })[0];
+
+            if (visibleSection) {
+                setActiveNav(visibleSection.target.id);
+            }
+        }, {
+            threshold: [0.25, 0.4, 0.6],
+            rootMargin: '-20% 0px -55% 0px'
+        });
+
+        pageSections.forEach(function (section) {
+            observer.observe(section);
+        });
+
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                const targetId = link.getAttribute('href').replace('#', '');
+                setActiveNav(targetId);
+            });
+        });
+    }
+
+
+    /* =========================================================
+       FORMSPREE CONTACT FORM
+    ========================================================= */
+
+    const contactForm = document.getElementById('contactForm');
+    const thankYouOverlay = document.getElementById('thankYouOverlay');
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (contactForm && thankYouOverlay && submitBtn) {
+        contactForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    contactForm.reset();
+
+                    // This is the only place the thank-you message appears.
+                    thankYouOverlay.classList.add('show');
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+
+            } catch (error) {
+                alert('There was a connection problem. Please try again.');
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        });
+    }
+
+});
+
+
+/* =========================================================
+   CLOSE THANK YOU OVERLAY
+========================================================= */
+
+function closeThankYou() {
+    const contactForm = document.getElementById('contactForm');
+    const thankYouOverlay = document.getElementById('thankYouOverlay');
+
+    if (thankYouOverlay) {
+        thankYouOverlay.classList.remove('show');
+    }
+
+    if (contactForm) {
+        contactForm.reset();
+    }
+}
+</script>
 </body>
 </html>
